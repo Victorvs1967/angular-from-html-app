@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Project } from 'src/app/models/Project';
 import { GetDataService } from 'src/app/services/get-data.service';
 import { ActivatedRoute } from '@angular/router';
+import { Page } from 'src/app/models/Page';
 
 @Component({
   selector: 'vs-project-page',
@@ -11,12 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectPageComponent implements OnInit {
 
-  project?: Project;
+  project?: Page;
   
   constructor(private dataServise: GetDataService, private route: ActivatedRoute) {
     this.route.params.subscribe(param => {
       this.dataServise.getProject(+param['id'])
-        .then((project => this.project = project));
+        .then((project => this.project = project.page));
     });
   }
 

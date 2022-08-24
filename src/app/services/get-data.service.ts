@@ -7,7 +7,7 @@ import { Project } from '../models/Project';
 })
 export class GetDataService {
 
-  dataLink: string = environment.filename;
+  dataLink: string= environment.filename;
 
   constructor() { }
 
