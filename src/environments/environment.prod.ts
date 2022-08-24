@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  filename: 'assets/data/projects-data.json',
 };

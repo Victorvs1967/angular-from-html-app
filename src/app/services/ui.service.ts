@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ScrollToService {
+export class UIService {
 
   constructor() { }
 
-// Scroll to 'content'
-  scrollTo = (content: string) => {
+// Scroll to 'contentTag'
+  scrollTo = (contentTag: string) => {
     const SCROLL_STEP = 0.1,
-          scrollToContent = document.getElementById(content);
+          scrollToContent = document.getElementById(contentTag);
 
     let currenttScroll = window.scrollY;
     let scrollAnimationId: number | undefined;
@@ -34,10 +34,8 @@ export class ScrollToService {
         scrollAnimationId = undefined;
       }
     };
-
-      stopAnimationScroll();
-      currenttScroll = window.scrollY;
-      if (scrollToContent) startAnimationScroll(scrollToContent.offsetTop);
+    
+    scrollToContent ? startAnimationScroll(scrollToContent.offsetTop) : stopAnimationScroll();
   };
 
 }

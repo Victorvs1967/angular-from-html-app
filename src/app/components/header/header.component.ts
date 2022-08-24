@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScrollToService } from 'src/app/services/scroll-to.service';
+import { UIService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'vs-header',
@@ -8,7 +8,7 @@ import { ScrollToService } from 'src/app/services/scroll-to.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private scrolling: ScrollToService) { }
+  constructor(private scrolling: UIService) { }
 
   ngOnInit(): void {
   }
