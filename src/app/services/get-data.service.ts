@@ -1,0 +1,25 @@
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { Project } from '../models/Project';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GetDataService {
+
+  constructor() { }
+
+  getProjects(): Promise<Project[]> {
+    return fetch(environment.filename)
+      .then(data => data.json())
+      .then((projects: Project[]) => [ ...projects ]);
+  }
+
+  getProject(id: number): Promise<Project> {
+    return fetch(environment.filename)
+      .then(data => data.json())
+      .then(projects => projects.find((project: Project) => project.id === id))
+      .then(project => project);
+  }
+
+}

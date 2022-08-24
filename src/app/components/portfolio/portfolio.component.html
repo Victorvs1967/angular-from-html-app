@@ -1,0 +1,12 @@
+<section class="portfolio" id="content">
+  <div class="container portfolio-container">
+    <h2 class="portfolio__title">Portfolio</h2>
+    <div class="portfolio__projects">
+      <a *ngFor="let project of projects;" class="portfolio__project" routerLink="/project/{{ project.id }}">
+        <img class="portfolio__project_image" src="assets/img/{{project.image}}" alt="{{project.name}}">
+        <h4 class="portfolio__project_title">{{ project.name }}</h4>
+        <p class="portfolio__project_subtitle">{{ project.description }}</p>
+      </a>
+    </div>
+  </div>
+</section>
